@@ -1,0 +1,78 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    android:layout_margin="7dp"
+    android:background="#fff"
+    app:cardCornerRadius="10dp"
+    android:layoutDirection="rtl"
+    android:textDirection="rtl">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <FrameLayout
+            android:layout_marginTop="6dp"
+            android:id="@+id/temp_framlayout"
+            android:layout_width="90dp"
+            android:layout_height="90dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cusImage"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_launcher_background"/>
+            <TextView
+                android:id="@+id/text"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shima "
+                android:textColor="#fff"/>
+        </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_margin="3dp"
+                android:textColor="@color/purple_900"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:textSize="18dp"
+                android:id="@+id/tvName"/>
+
+            <TextView
+                android:layout_margin="3dp"
+                android:text="77756798"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:id="@+id/tvPhon"/>
+
+            <TextView
+                android:layout_margin="3dp"
+                android:text="30"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:id="@+id/price"/>
+
+            <Button
+                android:layout_margin="3dp"
+                android:textSize="12dp"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:text="ارسال استشارة"
+                android:textStyle="bold"
+                android:id="@+id/send_con_btn"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_rounded_primary"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

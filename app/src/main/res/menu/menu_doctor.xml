@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+
+        <item
+
+            android:id="@+id/nav_department"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="@string/txt_docdepartmen" />
+        <item
+            android:id="@+id/nav_doctor"
+            android:icon="@drawable/icon_doctorsss"
+            android:title="@string/txt_all_doc" />
+
+    </group>
+    <group
+        android:id="@+id/grp_2"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_sign_out"
+            android:icon="@drawable/signout"
+            android:title="@string/sign_out" />
+    </group>
+
+
+
+
+</menu>

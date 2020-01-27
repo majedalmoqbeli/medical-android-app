@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:layout_gravity="right"
+    android:textDirection="rtl"
+    android:background="@color/grey_10">
+
+    <LinearLayout
+
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:background="@color/purple_900"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:text="@string/send_cons"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@color/grey_10"
+            android:layoutDirection="ltr"
+            android:gravity="center">
+            <LinearLayout
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="7dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.7"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/deplayout"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                >
+
+                                <Spinner
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    style="@style/mySpinnerItemStyle"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="12dp"
+                                    android:text="@string/selectDep"
+                                    android:gravity="center"
+                                    android:textAllCaps="false"
+                                    android:textColor="@android:color/white"
+                                    android:background="@drawable/btn_rounded_primary"
+                                    android:id="@+id/select_dept"></Spinner>
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/selectDep"
+                                    style="@style/textView"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/grey_60"/>
+
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.7"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/doclayout"
+
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:weightSum="2">
+
+
+                                <Spinner
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/selectDoc"
+                                    style="@style/mySpinnerItemStyle"
+                                    android:textAllCaps="false"
+                                    android:textColor="@android:color/white"
+                                    android:paddingLeft="3dp"
+                                    android:gravity="center"
+                                    android:paddingRight="3dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="12dp"
+                                    android:background="@drawable/btn_rounded_primary"
+                                    android:id="@+id/select_doctor"></Spinner>
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/doctor"
+                                    style="@style/textView"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/grey_60"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1.3"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="10dp"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:weightSum="2"
+                                android:orientation="vertical"
+                                >
+                                <TextView
+                                    android:background="@color/grey_20"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="0.8"
+                                    android:text="@string/cons_type"
+                                    android:gravity="center"
+                                    style="@style/textView"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:layout_marginTop="3dp"
+                                    />
+                                <RadioGroup
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2"
+                                    android:id="@+id/visibility_radio"
+                                    android:layout_marginTop="10dp">
+                                    <RadioButton
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="match_parent"
+                                        android:textColor="@color/purple_900"
+                                        android:buttonTint="@color/teal_A700"
+                                        android:text="@string/text_public"
+                                        android:textStyle="bold"
+                                        android:gravity="center"
+                                        android:textSize="16dp"
+                                        android:id="@+id/con_pubic"
+                                        />
+                                    <RadioButton
+                                        android:gravity="center"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="match_parent"
+                                        android:text="@string/txt_Private"
+                                        android:textStyle="bold"
+                                        android:textSize="16dp"
+                                        android:buttonTint="@color/teal_A700"
+                                        android:textColor="@color/purple_900"
+                                        android:id="@+id/con_private"
+                                        />
+                                </RadioGroup>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="7dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="2">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:weightSum="4"
+                            android:orientation="vertical"
+                            >
+                            <TextView
+                                android:background="@color/grey_20"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                android:textSize="14sp"
+                                style="@style/textView"
+                                android:layout_marginTop="7dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Patient_Information"
+                                android:gravity="center"/>
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="textCapWords"
+                                    android:hint="@string/Patient_Name"
+                                    style="@style/textView"
+                                    android:gravity="right"/>
+                            </android.support.design.widget.TextInputLayout>
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                >
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="text"
+                                    android:hint="@string/Patient_Age"
+                                    style="@style/textView"
+                                    android:gravity="right"
+                                    android:id="@+id/birthday"
+                                    />
+                            </android.support.design.widget.TextInputLayout>
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                >
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="textCapWords"
+                                    android:hint="@string/Patient_Weight"
+                                    style="@style/textView"
+                                    android:gravity="right"
+                                    android:id="@+id/weight"
+                                    />
+                            </android.support.design.widget.TextInputLayout>
+                            <TextView
+                                android:background="@color/purple_900"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                android:textSize="15dp"
+                                android:layout_margin="7dp"
+                                style="@style/textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Sex"/>
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="3dp"
+                                android:weightSum="2"
+                                android:id="@+id/gender_radio">
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="@color/purple_900"
+                                    android:text="@string/txt_Male"
+                                    android:textStyle="bold"
+                                    android:buttonTint="@color/teal_A700"
+                                    android:id="@+id/male"
+                                    android:textSize="16dp"
+
+                                    />
+                                <RadioButton
+                                    android:gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:textColor="@color/purple_900"
+                                    android:buttonTint="@color/teal_A700"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:id="@+id/female"
+                                    android:text="@string/txt_Female"
+                                    />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="7dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:background="@color/grey_20"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Patient_Information"
+                            android:gravity="center"
+                            android:layout_marginBottom="4dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:weightSum="4"
+                                android:orientation="vertical"
+
+                                >
+
+
+                                <TextView
+                                    android:background="@color/purple_900"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="15dp"
+                                    android:layout_marginTop="7dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/allirgic"/>
+                                <RadioGroup
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:weightSum="2"
+                                    android:id="@+id/allergie_radio">
+                                    <RadioButton
+                                        android:textStyle="bold"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:textColor="@color/purple_900"
+                                        android:buttonTint="@color/teal_A700"
+                                        android:textSize="16dp"
+                                        android:text="@string/yes"
+                                        android:id="@+id/allergie_yes"
+                                        />
+                                    <RadioButton
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:textColor="@color/purple_900"
+                                        android:buttonTint="@color/teal_A700"
+                                        android:textSize="16dp"
+                                        android:textStyle="bold"
+                                        android:id="@+id/allergie_No"
+                                        android:text="@string/no"
+                                        />
+                                </RadioGroup>
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/allergic_ex"
+                                    android:visibility="gone"
+                                    android:hint="@string/allergic_ex"
+                                    android:gravity="right"
+
+                                    style="@style/textView"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:weightSum="4"
+                                android:orientation="vertical"
+                                >
+
+
+                                <TextView
+                                    android:background="@color/purple_900"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="15dp"
+                                    android:layout_margin="7dp"
+                                    android:gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/medicine_ex"/>
+                                <RadioGroup
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:weightSum="2"
+                                    android:textStyle="bold"
+                                    android:id="@+id/medicine_group">
+                                    <RadioButton
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:textColor="@color/purple_900"
+                                        android:buttonTint="@color/teal_A700"
+                                        android:textSize="16dp"
+                                        android:text="@string/yes"
+                                        android:textStyle="bold"
+                                        android:id="@+id/medicine_yes"
+                                        />
+                                    <RadioButton
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:textColor="@color/purple_900"
+                                        android:buttonTint="@color/teal_A700"
+                                        android:textSize="16dp"
+                                        android:textStyle="bold"
+                                        android:id="@+id/medicine_no"
+                                        android:text="@string/no"
+                                        />
+                                </RadioGroup>
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/medicine_ex"
+                                    android:visibility="gone"
+                                    android:hint="@string/medicine_hint"
+                                    android:gravity="right"
+                                    style="@style/textView"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:weightSum="4"
+                                android:orientation="vertical"
+                                >
+
+
+                                <TextView
+                                    android:background="@color/purple_900"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="15dp"
+                                    android:layout_margin="7dp"
+                                    android:gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:text="@string/illness"/>
+                                <RadioGroup
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:weightSum="2"
+                                    android:id="@+id/illness_group">
+                                    <RadioButton
+                                        android:textStyle="bold"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:textColor="@color/purple_900"
+                                        android:buttonTint="@color/teal_A700"
+                                        android:textSize="16dp"
+                                        android:text="@string/yes"
+                                        android:id="@+id/illness_yes"
+                                        />
+                                    <RadioButton
+                                        android:textStyle="bold"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:textColor="@color/purple_900"
+                                        android:buttonTint="@color/teal_A700"
+                                        android:textSize="16dp"
+                                        android:id="@+id/illness_no"
+                                        android:text="@string/no"
+                                        />
+                                </RadioGroup>
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    android:id="@+id/illness_ex"
+                                    android:hint="@string/illness_ex"
+                                    android:gravity="right"
+                                    style="@style/textView"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="7dp"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="2">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:weightSum="4"
+                            android:orientation="vertical"
+                            >
+                            <TextView
+                                android:background="@color/purple_900"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                android:textSize="15dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Write_Your_Consultation"
+                                android:gravity="center"
+                                android:padding="3dp"
+                                />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="5dp">
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="textMultiLine"
+                                    android:hint="@string/cons_title"
+                                    style="@style/textView"
+                                    android:gravity="right"
+                                    android:id="@+id/cons_title"/>
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="5dp">
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="textMultiLine"
+                                    android:hint="@string/Write_Consultation"
+                                    style="@style/textView"
+                                    android:gravity="right"
+                                    android:id="@+id/cons_content"
+                                    />
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <Button
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="12dp"
+                                    android:textAllCaps="false"
+                                    android:textColor="@android:color/white"
+                                    android:background="@drawable/btn_rounded_primary"
+                                    android:layout_margin="5dp"
+                                    android:text="@string/Load_File"
+
+                                    android:id="@+id/load_files">
+
+                                </Button>
+                                <TextView
+
+                                    android:textSize="14sp"
+                                    android:textColor="@color/grey_60"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Load_File"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    style="@style/textView"
+                                    />
+                            </LinearLayout>
+                            <Button
+
+                                android:layout_marginRight="20dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="12dp"
+                                android:textAllCaps="false"
+                                android:textColor="@android:color/white"
+                                android:background="@drawable/btn_rounded_primary"
+                                android:layout_width="match_parent"
+                                android:layout_margin="5dp"
+                                android:text="@string/send"
+                               android:textSize="14sp"
+                                android:id="@+id/send_cons"
+                                >
+
+                            </Button>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background"
+                app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        android:scrollingCache="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_large">
+
+                <LinearLayout
+                    android:layout_marginTop="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@color/colorwhite"
+                        android:elevation="2dp"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0.1"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_person_black_24dp"/>
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="wrap_content"
+                            android:id="@+id/username"
+                            android:maxLength="50"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.9"
+                            android:hint="اسم المستخدم"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorwhite"
+                        android:elevation="2dp"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+                        <ImageView
+
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0.1"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_enhanced_encryption_black_24dp"/>
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="wrap_content"
+                            android:id="@+id/password"
+                            android:gravity="right"
+                            android:inputType="textPassword"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.9"
+                            android:maxLength="9"
+                            android:hint="كلمة السر"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="10dp"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorwhite"
+                        android:elevation="2dp"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0.1"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_enhanced_encryption_black_24dp"/>
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="wrap_content"
+                            android:id="@+id/passwordconf"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.9"
+                            android:inputType="textPassword"
+                            android:maxLength="8"
+                            android:gravity="right"
+                            android:hint="تاكيد كلمة السر"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="10dp"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+
+                        android:background="@color/colorwhite"
+                        android:elevation="2dp"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+                        <ImageView
+
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0.1"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_mail"/>
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="wrap_content"
+                            android:id="@+id/email"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.9"
+                            android:hint="الايميل"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+
+                        android:background="@color/colorwhite"
+                        android:elevation="2dp"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+                        <ImageView
+
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0.1"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_phone"/>
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/phone"
+                            android:layout_weight="1.9"
+                            android:hint="الهاتف"
+                            android:inputType="number"
+                            android:textSize="14sp"
+                            android:maxLength="15"
+                            android:layout_marginLeft="10dp"
+                            />
+
+
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/selectDepart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right">
+
+                    </Spinner>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="left"
+
+                        android:background="@color/colorwhite"
+                        android:elevation="2dp"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+                        <ImageView
+
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0.1"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_address"/>
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.9"
+                            android:id="@+id/address"
+                            android:hint="عناوان السكن"
+                            android:textSize="14sp"
+                            android:maxLength="30"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorwhite"
+                        android:elevation="2dp"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+                        <ImageView
+
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0.1"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_monetization_on_black_24dp"/>
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="wrap_content"
+                            android:id="@+id/consprice"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.9"
+                            android:inputType="number"
+                            android:hint="سعر الاستشارة"
+
+                            android:textSize="14sp"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="نبذه مختصره عن مؤهلاتك"
+                            android:textStyle="bold"
+                            android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:textColor="#000"
+                            android:textSize="16dp"
+                            android:gravity="center"/>
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp">
+                            <EditText
+                                android:id="@+id/about"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                android:hint="Write about yourself" />
+                        </android.support.design.widget.TextInputLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Write about you"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            android:layout_margin="10dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:drawableRight="@drawable/ic_add_circle_outline_black_24dp"
+                            android:textSize="16dp"
+                            android:drawableLeft="@drawable/ic_plus_one_black_24dp"
+                            android:gravity="center"/>
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimary"
+                            android:text="انشاء حساب "
+                            android:id="@+id/creatdocbtn"
+                            android:layout_marginBottom="20dp"
+                            android:textColor="#fff"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_add_black_24dp"
+        app:civ_border="true"
+        app:civ_border_width="2dp"
+        app:layout_anchor="@id/app_bar_layout"
+        app:layout_anchorGravity="bottom|center" />
+</android.support.design.widget.CoordinatorLayout>

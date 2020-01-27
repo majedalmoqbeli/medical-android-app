@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#429ce3</color>
+    <color name="colorPrimaryClicked">#3a709b</color>
+    <color name="colorPrimaryDark">#429ce3</color>
+    <color name="colorAccent">#00BFFF</color>
+    <color name="colorwhite">#fff</color>
+    <color name="colorDark">#696969</color>
+    <color name="colorPr">#00BFFF</color>
+
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="teal_A700">#00BFA5</color>
+    <color name="purple_900">#429ce3</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_40">#999999</color>
+    <color name="blue_600">#1E88E5</color>
+    <color name="blue_grey_600">#546E7A</color>
+    <color name="blue_grey_300">#90A4AE</color>
+
+
+    <color name="overlay_dark_40">#66000000</color>
+
+</resources>
