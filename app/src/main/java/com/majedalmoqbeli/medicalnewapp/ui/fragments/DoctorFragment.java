@@ -60,7 +60,7 @@ public class DoctorFragment extends Fragment {
     Button search_btn;
     String dept_id = "0";
 
-    public String URL = SaveSetting.ServerURLD+"General/get_all_doctors";
+    public String URL = SaveSetting.ServerURL+"General/get_all_doctors";
 
     public static DoctorFragment newInstance() {
         return new DoctorFragment();
@@ -208,7 +208,7 @@ public class DoctorFragment extends Fragment {
                     doc_name.setText(data.getUser_name());
                     final Button btnShowProfile = view1.findViewById(R.id.btnShowProfile);
                     final Button btnSendCon = view1.findViewById(R.id.btnSendCon);
-                    if (SaveSetting.USERTYPE.equals("1"))btnSendCon.setVisibility(View.GONE);
+                    if (SaveSetting.USER_TYPE.equals("1"))btnSendCon.setVisibility(View.GONE);
                     btnShowProfile.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -220,7 +220,7 @@ public class DoctorFragment extends Fragment {
                     btnSendCon.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            if (SaveSetting.USERID.equals("0"))
+                            if (SaveSetting.USER_ID.equals("0"))
                                 alertToGetLogin();
                             else {
                                 Intent i = new Intent(getActivity(), SingleFragmentActivity.class);
@@ -239,11 +239,11 @@ public class DoctorFragment extends Fragment {
                 }
             });
 
-            if (SaveSetting.USERTYPE.equals("1"))send_con_btn.setVisibility(View.GONE);
+            if (SaveSetting.USER_TYPE.equals("1"))send_con_btn.setVisibility(View.GONE);
             send_con_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(SaveSetting.USERID.equals("0")){
+                    if(SaveSetting.USER_ID.equals("0")){
                         alertToGetLogin();
                     }
                     else{

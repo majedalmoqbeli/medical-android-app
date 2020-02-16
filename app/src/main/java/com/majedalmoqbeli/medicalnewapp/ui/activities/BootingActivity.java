@@ -18,7 +18,7 @@ public class BootingActivity extends AppCompatActivity {
                 try {
                     sleep(2000);
                     SaveSetting sv = new SaveSetting(BootingActivity.this);
-                    sv.LoadData();
+                    sv.loadData();
                     finish();
                 } catch (InterruptedException e) {
                     e.printStackTrace();

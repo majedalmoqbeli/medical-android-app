@@ -4,121 +4,70 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.majedalmoqbeli.medicalnewapp.constents.UserKey;
 import com.majedalmoqbeli.medicalnewapp.ui.activities.MainActivity;
 import com.majedalmoqbeli.medicalnewapp.ui.activities.WelcomeActivity;
 
 
 public class SaveSetting {
-    Context context;
-    SharedPreferences sharedPreferences;
-    public static final String MyPREFERENCES = "MyPrefs3";
-    public static String USERID = "0";
-    public static String USERTYPE = "0";
-    public static String USERNAME = "0";
-    public static String ServerURL = "http://www.sooqazal.com/Doctor/";
-//http://www.sooqazal.com/Doctor/
-    //https://madcare.000webhostapp.com/
+    private Context context;
+    private SharedPreferences sharedPreferences;
+    private static final String MyPREFERENCES = "MyPrefs";
+    public static String USER_ID = "0";
+    public static String USER_TYPE = "0";
+    public static String USER_NAME = "0";
+    public static String ServerURL = "http://192.168.101.1:8080/Madcare/";
 
-
-
-
-    public static String USERTOKEN = "0";
-    public static String USEREMAIL = "0";
-    public static String ServerURLD = "http://www.sooqazal.com/medcare/";
-    public static String KEY = "acb8f67925ab60e2dff0ab535a56cfe8a26f565e";
-
-    /* Doctor Filter */
-    public static String DOC_PREFERENCES = "doctor_preference";
-    public static String QUERY = "query";
-    public static String DEPART_ID = "depart_id";
-    public static String PRICE = "price";
-
-
-    /* Consultation draft */
-
-    public static String CON_PREFERENCES = "doctor_preference";
-    public static String IS_CON = "is_con";
-    public static String doc_id = "doc_id";
-    public static String is_public = "is_public";
-    public static String gender = "gender";
-    public static String weight = "weight";
-    public static String cons_content = "cons_content";
-    public static String birthday = "birthday";
-    public static String medicine = "medicine";
-    public static String illness = "illness";
-    public static String allergies = "allergies";
 
     public SaveSetting(Context context) {
         this.context = context;
         sharedPreferences = context.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
     }
 
-    public void SaveData() {
+    public void saveData() {
         try {
-            SharedPreferences.Editor editorUSERID = sharedPreferences.edit();
-            editorUSERID.putString("USERID", String.valueOf(USERID));
-            editorUSERID.commit();
-
-            SharedPreferences.Editor editorUSERNAME = sharedPreferences.edit();
-            editorUSERNAME.putString("USERNAME", String.valueOf(USERNAME));
-            editorUSERNAME.commit();
-
-            SharedPreferences.Editor editorUSERTYPE = sharedPreferences.edit();
-            editorUSERTYPE.putString("USERTYPE", String.valueOf(USERTYPE));
-            editorUSERTYPE.commit();
-
-            LoadData();
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(UserKey.USER_ID_KEY, String.valueOf(USER_ID));
+            editor.putString(UserKey.USER_NAME_KEY, String.valueOf(USER_NAME));
+            editor.putString(UserKey.USER_TYPE_KEY, String.valueOf(USER_TYPE));
+            editor.apply();
+            loadData();
         } catch (Exception e) {
         }
     }
 
-    public void LoadData() {
-        String TempUserID = sharedPreferences.getString("USERID", "empty");
-        String TempUserName = sharedPreferences.getString("USERNAME", "empty");
-        String TempUSERTYPE = sharedPreferences.getString("USERTYPE", "empty");
+    public void loadData() {
+        String TempUserID = sharedPreferences.getString(UserKey.USER_ID_KEY, "0");
+        String TempUserName = sharedPreferences.getString(UserKey.USER_NAME_KEY, "0");
+        String TempUSERTYPE = sharedPreferences.getString(UserKey.USER_TYPE_KEY, "0");
 
-        if (!TempUserID.equals("empty")) {
-            USERID = TempUserID;
-            USERNAME = TempUserName;
-            USERTYPE = TempUSERTYPE;
+        if (!TempUserID.equals("0")) {
+            USER_ID = TempUserID;
+            USER_NAME = TempUserName;
+            USER_TYPE = TempUSERTYPE;
 
-            if (!USERID.equals("0")) {
-                if (USERTYPE.equals("1")) {
-                    Intent intent = new Intent(context, MainActivity.class);
-                    context.startActivity(intent);
+            if (!USER_ID.equals("0")) {
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
 
-                } else if (USERTYPE.equals("2")) {
-                    Intent intent = new Intent(context, MainActivity.class);
-                    context.startActivity(intent);
-                }
             } else {
                 Intent intent = new Intent(context, WelcomeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         } else {
             Intent intent = new Intent(context, WelcomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
-
         }
     }
 
-
-    public static String getData(Context context,String key,String prefName){
-        SharedPreferences  sd = context.getSharedPreferences(prefName,context.MODE_PRIVATE);
-        return sd.getString(key,"");
-
+    public void deleteData() {
+        USER_ID = "0";
+        USER_NAME = "0";
+        USER_TYPE = "0";
+        saveData();
     }
-
-
-
-    public static void setData(Context context,String key,String value,String prefName){
-        SharedPreferences sharedPreferences = context.getSharedPreferences(prefName,Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.remove(key);
-        editor.apply();
-        editor.putString(key, value);
-        editor.apply();
-    }
-
 
 }

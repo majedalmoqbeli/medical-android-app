@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         activity=this;
         floatingActionBtn = findViewById(R.id.floatingActionBtn);
         TooltipCompat.setTooltipText(floatingActionBtn, getString(R.string.floatingActionBtn));
-        if (SaveSetting.USERTYPE.equals("1")) floatingActionBtn.setVisibility(View.GONE);
+        if (SaveSetting.USER_TYPE.equals("1")) floatingActionBtn.setVisibility(View.GONE);
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
@@ -60,28 +60,28 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
-        if (SaveSetting.USERID.equals("0"))
+        if (SaveSetting.USER_ID.equals("0"))
             navigationView.inflateMenu(R.menu.menu_guest);
-        else if (SaveSetting.USERTYPE.equals("1")) navigationView.inflateMenu(R.menu.menu_doctor);
+        else if (SaveSetting.USER_TYPE.equals("1")) navigationView.inflateMenu(R.menu.menu_doctor);
         else navigationView.inflateMenu(R.menu.menu_user);
 
         navigationView.setNavigationItemSelectedListener(this);
         View view = navigationView.getHeaderView(0);
         txtUserName = view.findViewById(R.id.userName);
-        if (SaveSetting.USERID.equals("0"))
+        if (SaveSetting.USER_ID.equals("0"))
             txtUserName.setText(getString(R.string.noLogin));
         else {
-            txtUserName.setText(SaveSetting.USERNAME);
+            txtUserName.setText(SaveSetting.USER_NAME);
         }
         imageUser = view.findViewById(R.id.imageView);
-        Picasso.with(this).load(SaveSetting.ServerURL + "user_image/user_" + SaveSetting.USERID + ".jpg").memoryPolicy(MemoryPolicy.NO_CACHE).into(imageUser);
+        Picasso.with(this).load(SaveSetting.ServerURL + "user_image/user_" + SaveSetting.USER_ID + ".jpg").memoryPolicy(MemoryPolicy.NO_CACHE).into(imageUser);
         loadFragment(new AllConsultationFragment());
 
 
         floatingActionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (SaveSetting.USERID.equals("0")){
+                if (SaveSetting.USER_ID.equals("0")){
                     alertToGetLogin();
                 }else {
                     Intent intent = new Intent(getApplicationContext(),SingleFragmentActivity.class);
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity
                         break;
 
                     case R.id.navigation_dashboard: {
-                        if (SaveSetting.USERID.equals("0"))
+                        if (SaveSetting.USER_ID.equals("0"))
                             alertToGetLogin();
                         else
                             fragment = new MyConsultationFargment();
@@ -113,10 +113,10 @@ public class MainActivity extends AppCompatActivity
                     }
 
                     case R.id.navigation_profile:
-                        if (SaveSetting.USERID.equals("0"))
+                        if (SaveSetting.USER_ID.equals("0"))
                             alertToGetLogin();
                         else {
-                            if(SaveSetting.USERTYPE.equals("1"))
+                            if(SaveSetting.USER_TYPE.equals("1"))
                                 fragment = new ProfileFragment();
                             else fragment = new UserProfileFragment();
                         }
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_send) {
-            if (SaveSetting.USERID.equals("0")){
+            if (SaveSetting.USER_ID.equals("0")){
                 alertToGetLogin();
             }else {
                 Intent intent = new Intent(getApplicationContext(),SingleFragmentActivity.class);
@@ -178,11 +178,11 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_sign_out) {
-            SaveSetting.USERTYPE = "0";
-            SaveSetting.USERID = "0";
-            SaveSetting.USERNAME = "0";
+            SaveSetting.USER_TYPE = "0";
+            SaveSetting.USER_ID = "0";
+            SaveSetting.USER_NAME = "0";
             SaveSetting sv = new SaveSetting(MainActivity.this);
-            sv.SaveData();
+            sv.saveData();
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);

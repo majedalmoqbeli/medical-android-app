@@ -93,7 +93,7 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
             } else {
                 comment.setText(commentData.getComment());
             }
-            if (commentData.getUser_id().equals(SaveSetting.USERID)){
+            if (commentData.getUser_id().equals(SaveSetting.USER_ID)){
                 deleteComments.setVisibility(View.VISIBLE);
             } else deleteComments.setVisibility(View.GONE);
             comment_userName.setText(commentData.getUser_name());
@@ -113,7 +113,7 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
 
                                     url = SaveSetting.ServerURL + "deleteComment.php";
                                     map.put("comment_id",commentData.getComment_id() );
-                                    map.put("user_id",SaveSetting.USERID );
+                                    map.put("user_id",SaveSetting.USER_ID);
                                     map.put("Has_img",commentData.getHas_img());
                                     deleteComments();
                                     MyProgressDialog.show(ctx);

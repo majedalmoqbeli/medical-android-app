@@ -51,7 +51,7 @@ AppBarLayout app_bar_layout;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
-        if (SaveSetting.USERID.equals("0")) finish();
+        if (SaveSetting.USER_ID.equals("0")) finish();
         else {
             if (getIntent().getExtras() != null) {
                 userDoctorData = (UserDoctorData) getIntent().getExtras().getSerializable("userDoctorData");
@@ -139,9 +139,9 @@ AppBarLayout app_bar_layout;
                     @Override
                     public void onResponse(String response) {
                         MyProgressDialog.hide();
-                        SaveSetting.USERNAME=username.getText().toString();
+                        SaveSetting.USER_NAME =username.getText().toString();
                         SaveSetting sv = new SaveSetting(EditProfileActivity.this);
-                        sv.SaveData();
+                        sv.saveData();
                         Toast.makeText(EditProfileActivity.this, getString(R.string.updataDone), Toast.LENGTH_SHORT).show();
                         Log.i("MySuccess", "" + response);
                         finish();
@@ -159,7 +159,7 @@ AppBarLayout app_bar_layout;
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("id", SaveSetting.USERID);
+                params.put("id", SaveSetting.USER_ID);
                 params.put("username", username.getText().toString().trim());
                 params.put("user_email", user_email.getText().toString().trim());
                 params.put("address", address.getText().toString().trim());

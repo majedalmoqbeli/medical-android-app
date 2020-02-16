@@ -36,7 +36,7 @@ import java.util.Map;
  */
 public class UserProfileFragment extends Fragment {
 
-    public final static String U2_URL = "http://www.sooqazal.com/medcare/General/get_user_data?user_id=" + SaveSetting.USERID;
+    public final static String U2_URL = "http://www.sooqazal.com/medcare/General/get_user_data?user_id=" + SaveSetting.USER_ID;
     public final static String U_URL = "http://www.sooqazal.com/medcare/User/UpdateUser?";
     private RequestQueue requestQueue;
     private TextInputLayout nameLayout, emailLayout, phoneLayout, addressLayout;
@@ -127,9 +127,9 @@ public class UserProfileFragment extends Fragment {
                             public void onResponse(String response) {
 
                                 MyProgressDialog.hide();
-                                SaveSetting.USERNAME=name.getText().toString();
+                                SaveSetting.USER_NAME =name.getText().toString();
                                 SaveSetting sv = new SaveSetting(getActivity());
-                                sv.SaveData();
+                                sv.saveData();
                                 Toast.makeText(getActivity(), getString(R.string.updataDone), Toast.LENGTH_SHORT).show();
                                 Log.i("MySuccess", "" + response);
                                 getActivity().finish();
@@ -145,7 +145,7 @@ public class UserProfileFragment extends Fragment {
                             @Override
                             protected Map<String, String> getParams() throws AuthFailureError {
                                 Map<String, String> map = new HashMap<>();
-                                map.put("id", SaveSetting.USERID);
+                                map.put("id", SaveSetting.USER_ID);
                                 map.put("username", userName);
                                 map.put("phone", userPhone);
                                 map.put("email", userEmail);

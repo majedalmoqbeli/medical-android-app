@@ -102,5 +102,6 @@
     <string name="cons_title">عنوان الأستشارة</string>
     <string name="medicine_hint">اسم العلاج</string>
     <string name="getDep">القسم : s$</string>
+    <string name="dont_have_account">إنشاء حساب جديد !</string>
 
 </resources>

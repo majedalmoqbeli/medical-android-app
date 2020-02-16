@@ -72,7 +72,7 @@ public class AdapterConsultation extends RecyclerView.Adapter<AdapterConsultatio
             cons_date_time = itemView.findViewById(R.id.cons_date_time);
             doc_name = itemView.findViewById(R.id.doc_name);
             doc_nameLinear=itemView.findViewById(R.id.doc_nameLinear);
-            if(myCon!=1 || SaveSetting.USERTYPE.equals("2")){
+            if(myCon!=1 || SaveSetting.USER_TYPE.equals("2")){
                 doc_nameLinear.setVisibility(View.VISIBLE);
             }
 
@@ -87,7 +87,7 @@ public class AdapterConsultation extends RecyclerView.Adapter<AdapterConsultatio
                     doc_name.setText(mItem.getDoctor_name());
                     final Button btnShowProfile = view1.findViewById(R.id.btnShowProfile);
                     final Button btnSendCon = view1.findViewById(R.id.btnSendCon);
-                    if (SaveSetting.USERTYPE.equals("1"))btnSendCon.setVisibility(View.GONE);
+                    if (SaveSetting.USER_TYPE.equals("1"))btnSendCon.setVisibility(View.GONE);
 
                     btnShowProfile.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -100,7 +100,7 @@ public class AdapterConsultation extends RecyclerView.Adapter<AdapterConsultatio
                     btnSendCon.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            if (SaveSetting.USERID.equals("0"))
+                            if (SaveSetting.USER_ID.equals("0"))
                                 alertToGetLogin();
                             else {
                                 Intent i = new Intent(ctx, SingleFragmentActivity.class);

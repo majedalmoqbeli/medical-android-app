@@ -84,7 +84,7 @@ public class ConsultationCommentActivity extends AppCompatActivity {
             } else finish();
 
         addCommentLinear = findViewById(R.id.addCommentLinear);
-        if (conData.getU_id_doc().equals(SaveSetting.USERID) || conData.getUser_id().equals(SaveSetting.USERID)) {
+        if (conData.getU_id_doc().equals(SaveSetting.USER_ID) || conData.getUser_id().equals(SaveSetting.USER_ID)) {
             addCommentLinear.setVisibility(View.VISIBLE);
         }
         recyclerView = findViewById(R.id.recyclerComment);
@@ -117,7 +117,7 @@ public class ConsultationCommentActivity extends AppCompatActivity {
                 final Button btnShowProfile = view1.findViewById(R.id.btnShowProfile);
                 final Button btnSendCon = view1.findViewById(R.id.btnSendCon);
 
-                if (SaveSetting.USERTYPE.equals("1"))btnSendCon.setVisibility(View.GONE);
+                if (SaveSetting.USER_TYPE.equals("1"))btnSendCon.setVisibility(View.GONE);
                 btnShowProfile.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -130,7 +130,7 @@ public class ConsultationCommentActivity extends AppCompatActivity {
                 btnSendCon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (SaveSetting.USERID.equals("0"))
+                        if (SaveSetting.USER_ID.equals("0"))
                             alertToGetLogin();
                         else {
                             Intent intent = new Intent(getApplicationContext(),SingleFragmentActivity.class);
@@ -356,7 +356,7 @@ public class ConsultationCommentActivity extends AppCompatActivity {
 
         urlComment = SaveSetting.ServerURL + "sendComment.php";
         mapComment.put("cons_id", conData.getCons_id());
-        mapComment.put("user_id", SaveSetting.USERID);
+        mapComment.put("user_id", SaveSetting.USER_ID);
         mapComment.put("myComment", comment);
         mapComment.put("has_img", has_img);
         mapComment.put("imagecomment", imgBase64);

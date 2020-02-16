@@ -80,7 +80,7 @@ public class ProfileFragment extends Fragment {
         super.onCreate(savedInstanceState);
         MyProgressDialog.show(getActivity());
         url = SaveSetting.ServerURL + "getDoctorByID.php";
-        map.put("userID", SaveSetting.USERID);
+        map.put("userID", SaveSetting.USER_ID);
     }
 
 

@@ -56,9 +56,9 @@ public class MyConsultationFargment extends Fragment {
         super.onCreate(savedInstanceState);
         MyProgressDialog.show(getActivity());
         url = SaveSetting.ServerURL + "getConsultaionByDoctorID.php";
-      if(SaveSetting.USERTYPE.equals("1"))
-        map.put("userDoc", SaveSetting.USERID);
-        else map.put("userID", SaveSetting.USERID);
+      if(SaveSetting.USER_TYPE.equals("1"))
+        map.put("userDoc", SaveSetting.USER_ID);
+        else map.put("userID", SaveSetting.USER_ID);
     }
 
     @Override

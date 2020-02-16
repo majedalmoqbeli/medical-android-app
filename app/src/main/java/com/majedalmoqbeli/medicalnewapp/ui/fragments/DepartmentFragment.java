@@ -133,11 +133,7 @@ public class DepartmentFragment extends Fragment {
             lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), SingleFragmentActivity.class);
-                    SaveSetting.setData(getActivity(), SaveSetting.DEPART_ID,dept.getDepID(),SaveSetting.DOC_PREFERENCES);
-                    intent.putExtra("dept_id",dept.getDepID());
-                    intent.putExtra("to","doc");
-                    startActivity(intent);
+
                 }
             });
 
@@ -146,7 +142,7 @@ public class DepartmentFragment extends Fragment {
     }
 
     public void getAllDepartment() {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, SaveSetting.ServerURLD + "General",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, SaveSetting.ServerURL + "General",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

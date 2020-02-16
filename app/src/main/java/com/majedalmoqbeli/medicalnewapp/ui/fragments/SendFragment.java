@@ -131,14 +131,7 @@ public class SendFragment extends Fragment {
         allergie_radio = view.findViewById(R.id.allergie_radio);
         cons_title = view.findViewById(R.id.cons_title);
 
-        if (SaveSetting.getData(getActivity(), SaveSetting.IS_CON, SaveSetting.CON_PREFERENCES).equals("true")) {
-            weightED.setText(SaveSetting.getData(getActivity(), SaveSetting.weight, SaveSetting.CON_PREFERENCES));
-            birthdayED.setText(SaveSetting.getData(getActivity(), SaveSetting.birthday, SaveSetting.CON_PREFERENCES));
-            cons_contentED.setText(SaveSetting.getData(getActivity(), SaveSetting.cons_content, SaveSetting.CON_PREFERENCES));
-            medicine_ex.setText(SaveSetting.getData(getActivity(), SaveSetting.medicine, SaveSetting.CON_PREFERENCES));
-            allergic_ex.setText(SaveSetting.getData(getActivity(), SaveSetting.allergies, SaveSetting.CON_PREFERENCES));
-            illness_ex.setText(SaveSetting.getData(getActivity(), SaveSetting.illness, SaveSetting.CON_PREFERENCES));
-        }
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
                 (ActivityCompat.checkSelfPermission(getActivity(),
@@ -186,7 +179,7 @@ public class SendFragment extends Fragment {
 
         MyProgressDialog.show(getActivity());
 
-        map.put("user_id", SaveSetting.USERID);
+        map.put("user_id", SaveSetting.USER_ID);
         map.put("key", "dedededede");
         map.put("u_id_doc", doc_id);
         map.put("is_public", visibility_radio.getCheckedRadioButtonId() == R.id.con_pubic ? "1" : "0");
@@ -204,7 +197,7 @@ public class SendFragment extends Fragment {
             map.put("cons_attach[" + (i++) + "]", temp);
         }
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, SaveSetting.ServerURLD + "General/send_consultation",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, SaveSetting.ServerURL + "General/send_consultation",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -338,7 +331,7 @@ public class SendFragment extends Fragment {
 
     public void getAllDepartment() {
         MyProgressDialog.show(getActivity());
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, SaveSetting.ServerURLD + "General",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, SaveSetting.ServerURL + "General",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -392,7 +385,7 @@ public class SendFragment extends Fragment {
     public void getAllDoctor(String dept_id) {
         MyProgressDialog.show(getActivity());
         doctorsList = new ArrayList<>();
-        String URL = SaveSetting.ServerURLD + "General/get_all_doctors?depart_id=" + dept_id;
+        String URL = SaveSetting.ServerURL + "General/get_all_doctors?depart_id=" + dept_id;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
                 new Response.Listener<String>() {
                     @Override
