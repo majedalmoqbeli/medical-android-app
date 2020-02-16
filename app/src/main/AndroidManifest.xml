@@ -12,23 +12,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".BootingActivity">
+        <activity android:name=".ui.activities.LoginActivity" />
+        <activity android:name=".ui.activities.MainActivity" />
+        <activity android:name=".ui.activities.BootingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ConsultationCommentActivity" />
-        <activity android:name=".EditProfileActivity" />
-        <activity android:name=".ProfileDocActivity" />
-        <activity android:name=".WelcomeActivity" />
-        <activity android:name=".SingleFragmentActivity" />
-        <activity android:name=".CreateAccountActivity" />
-        <activity android:name=".CreateDoctorAccountActivity" />
-        <activity android:name=".CreateUserAccountActivity"></activity>
+        <activity android:name=".ui.activities.ConsultationCommentActivity" />
+        <activity android:name=".ui.activities.EditProfileActivity" />
+        <activity android:name=".ui.activities.ProfileDocActivity" />
+        <activity android:name=".ui.activities.WelcomeActivity" />
+        <activity android:name=".ui.activities.SingleFragmentActivity" />
+        <activity android:name=".ui.activities.CreateAccountActivity" />
+        <activity android:name=".ui.activities.CreateDoctorAccountActivity" />
+        <activity android:name=".ui.activities.CreateUserAccountActivity"></activity>
     </application>
 
 </manifest>
